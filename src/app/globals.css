@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Плавные анимации для карточек и кнопок */
+.card-hover {
+  @apply transition-transform duration-200 ease-in-out hover:scale-[1.03] hover:shadow-lg;
+}
+
+.btn-primary {
+  @apply bg-primary text-white rounded px-4 py-2 font-semibold hover:bg-primary/90 transition-colors duration-200;
+}
+
+.btn-outline {
+  @apply border border-primary text-primary rounded px-4 py-2 font-semibold hover:bg-primary hover:text-white transition-colors duration-200;
+}
+
+.link {
+  @apply text-primary underline hover:text-primary/80 transition-colors duration-200;
+}
+
+/* Адаптивность для карточек */
+@media (max-width: 640px) {
+  .product-card {
+    min-width: 90vw;
+    max-width: 100vw;
+  }
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
